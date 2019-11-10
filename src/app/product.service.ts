@@ -6,11 +6,12 @@ import { Product } from "./product";
 
 import 'rxjs/add/operator/map';
 
+
 @Injectable()
 export class ProductService {
 
-  private _albumUrl='../asset/album.json';
-  private _productsUrl='../asset/products.json';
+  private _albumUrl='../assets/album.json';
+  private _productsUrl='../assets/products.json';
 
   
 
@@ -23,7 +24,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]>{
-    return this._http.get(this._productsUrl).map(response => <Product[]>response.json());
+    return this._http.get(this._productsUrl).map(response=> <Product[]>response.json());
   }
 
 }
